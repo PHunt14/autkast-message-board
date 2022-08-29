@@ -1,9 +1,25 @@
 <!-- display the messages that have been input-->
 <html lang="en">
 <head>
-    <title>Messages</title>
+    <title>Input</title>
 </head>
 <body>
-    
+    <a href="index.html">Home</a>
+    <a href="messages.html">Messages</a>
+    <form id="message_form">
+        <p>Enter your message below:</p>
+        <input type="text" name="message" placeholder="Message" size="20"><br><br>
+    </form>
+    <button onclick="outputmessage()">Submit</button>
+    <script>
+        function outputmessage() {
+            var x, y
+            x = document.getElementById("message_form");
+            y = x.elements["message"].value;
+            document.getElementById("message_paragraph").innerHTML+=y + "\n";
+        }
+    </script>
+    <p>Messages:</p>
+    <p id="message_paragraph"></p>
 </body>
 </html>
